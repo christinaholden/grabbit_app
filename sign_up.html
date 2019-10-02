@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>GRABBIT Bookmarking Service - Sign Up</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/bookmark_style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Princess+Sofia" rel="stylesheet"> 
+    <script type="text/javascript" src="private/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.php">Grabbit</a></h1>
+    </header>
+    <div id="form-wrapper">
+        <h1 id="form-header">Sign Up For An Account:</h1>
+        
+        <!-- The form runs a JavaScript validation of all input fields before posting to sign_up.php. -->
+        <form class="form" action="private/sign_up.php" method="POST" onsubmit="return validateUserData()" name="signup">
+            <input type="text" placeholder="Enter User Name" name="username" id="username" aria-label="Enter User Name" required>
+            <span class="invalid" id="username-invalid"></span>
+
+            <input type="email" placeholder="Enter Email" name="email" aria-label="Enter Email" required>
+            <span class="invalid" id="email-invalid"></span>
+
+            <input type="password" placeholder="Enter Password: 8 characters or more" name="password" aria-label="Enter Password" required>
+            <span class="invalid" id="password-invalid"></span>
+
+            <input type="password" placeholder="Confirm Password" name="pswrepeat" aria-label="Confirm Password" required>
+            <span class="invalid" id="confirm-invalid"></span>
+
+            <button type="submit" id="signup-btn">Create an Account</button><br>
+            <a href="index.php"><button type="button"  id="cancel-btn">Cancel</button></a>
+        </form>
+    </div>
+    <footer>
+        <span>&copy; 2017 GRABBIT</span>
+    </footer>
+
+    <!-- Adds event listeners for form validation. -->
+    <script type="text/javascript">
+        const USERNAME = document.signup.username;
+        const EMAIL  = document.signup.email;
+        const PASSWORD  = document.signup.password;
+        const CONFIRM = document.signup.pswrepeat;
+        setSignUpListeners();
+    </script>
+
+</body>
+
+</html>

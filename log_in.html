@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8"/>
+    <title>GRABBIT Bookmarking Service - Log in</title>
+    <meta name="description" content=""/>
+    <meta name="keywords" content=""/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <link rel="stylesheet" href="css/bookmark_style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Princess+Sofia" rel="stylesheet"> 
+    <script type="text/javascript" src="private/scripts.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><a href="index.php">Grabbit</a></h1>
+    </header>
+    <div id="form-wrapper">
+        <h1 id="form-header">Log in:</h1>
+        <form class="form" action="private/log_in.php" method="POST" name="login">
+            <input type="text" placeholder="Enter User Name" name="username" aria-label="Enter User Name" required>
+            <span class="invalid" id="username-invalid"></span>
+
+            <input type="password" placeholder="Enter Password" name="password" aria-label="Enter Password" required>
+            <span class="invalid" id="password-invalid"></span>
+
+            <button type="submit" id="login-btn">Log into my Account</button><br>
+            <a href="index.php"><button type="button"  id="cancel-btn">Cancel</button></a>
+        </form>
+    </div>
+    <footer>
+        <span>&copy; 2017 GRABBIT</span>
+    </footer>
+
+    <!-- Adds event listeners for form validation. -->
+    <script type="text/javascript">
+        const USERNAME = document.login.username;
+        const PASSWORD  = document.login.password;
+        setLogInListeners();
+    </script>
+
+</body>
+
+</html>
